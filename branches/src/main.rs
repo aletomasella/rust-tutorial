@@ -39,6 +39,21 @@ fn main() {
     }
 
     
-    let result = fibonachi(100);
+    let result = fibonachi(10);
     println!("{}", result);
+
+    fn multiply_by (num : &i32) -> i32 {
+      return num * 10;
+    }
+
+    let array = [1, 2, 3, 4, 5];
+
+    let array = array.iter().map(|x| multiply_by(x)).collect::<Vec<i32>>();
+
+    let array = array.iter().map(|x| multiply_by(x)).collect::<Vec<i32>>();
+
+
+
+    println!("{:?}", array);
+
 }
