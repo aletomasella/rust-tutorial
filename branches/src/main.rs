@@ -35,6 +35,7 @@ fn main() {
       for num in 2..=n {
         cache.push(cache[num as usize - 1] + cache[num as usize - 2]);
       }
+      println!("{:?}", cache);
       return cache[n as usize];
     }
 
@@ -55,5 +56,7 @@ fn main() {
 
 
     println!("{:?}", array);
+
+      
 
 }
