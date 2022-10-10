@@ -14,4 +14,8 @@ fn main() {
         println!("Application error: {}", e);
         process::exit(1);
     }
+
+    let i = 2;
+
+    println!("Hello, world! {}", i);
 }
