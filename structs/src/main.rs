@@ -1,6 +1,6 @@
 
 #[derive(Debug)]
-struct User {
+pub struct User {
     username: String,
     email: String,
     sign_in_count: u64,
@@ -17,12 +17,30 @@ impl User {
         }
     }
 
-    fn sing_in(&mut self) {
+    pub fn get_username (&self) -> &str {
+        &self.username
+    }
+
+   pub  fn get_email (&self) -> &str {
+        &self.email
+    }
+
+  pub  fn get_sign_in_count (&self) -> u64 {
+        self.sign_in_count
+    }
+
+   pub  fn get_active (&self) -> bool {
+        self.active
+    }
+
+
+    fn sing_in (&mut self) {
         self.sign_in_count += 1;
     }
+
 }
 
-
+use structs::get_avg::AverageCollection;
 
 fn main () {
     let mut s = String::from("hello");
@@ -77,6 +95,16 @@ fn main () {
 
     let coin = Coin::Quarter(1);
     println!("{}", value_in_cents(coin));
+
+    let mut avg = AverageCollection::new();
+
+    avg.add(1);
+    avg.add(2);
+    avg.add(3);
+    avg.add(500);
+    avg.add(1000);
+    println!("{}", avg.average());
+    avg.remove();
 
 }
 
